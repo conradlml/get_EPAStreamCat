@@ -3,7 +3,7 @@
 # Direct watershed and catchment data download from EPA's StreamCat Dataset. 
 # 
 # Lily Conrad, IDEQ State Office
-# last update: 1/3/2025
+# last update: 2/5/2025
 # 
 # Data citation: 
 # Weber, Marc H, Hill, Ryan A., Brookes, Allen F. 2024, StreamCatTools: Tools to 
@@ -11,23 +11,6 @@
 # LakeCat metrics, https://usepa.github.io/StreamCatTools
 ################################################################################
 
-################################################################################
-#                              READ ME!
-################################################################################
-
-### Background information -----------------------------------------------------
-
-# EPA's StreamCat Dataset contains over 600 metrics characterizing watersheds
-# and catchments. Most of these values were derived via modeling and include
-# predicted water temperature, predicted biological condition, landscape 
-# conditions and much more. For a full description of the dataset, visit EPA's 
-# website (https://www.epa.gov/national-aquatic-resource-surveys/streamcat-dataset). 
-# To download StreamCat data, you can either visit their website or use this R 
-# script. 
-
-# This script was developed to download water column data from a user provided
-# HUC. The query can be adjusted slightly to expand the search to groundwater
-# or even sediment. 
 
 # To get started, provide the user inputs below following the outlined format.
 # Please review the instructions and examples carefully, the format matters. 
@@ -64,15 +47,12 @@ county <- "16059,16037"
 
 # Enter your username (the name at the beginning of your computer's file explorer
 # path) in quotations.
-my_name <- "lconrad"
+my_name <- "jdoe"
 
 
-# Great! Now that you've entered the values above, click on "Source" and an 
-# Excel file will save in your Downloads folder. If you get a message
-# asking you if you want to restart your R session, say no. If your console 
-# stops running code and asking for a number, type 1 and hit enter. After the file
-# downloads successfully, you can now join this with an NHDPlus dataset by the 
-# COMID in R or in ArcGIS software. 
+# Now that you've entered the values above, click on "Source" and watch
+# your console for errors. If the script ran successfully, there will be a new
+# Excel file in your Downloads folder. 
 
 
 ################################################################################
@@ -102,7 +82,7 @@ sc.dat <- sc_get_data(aoi = aoi,
 
 # Save the data to excel. This will save the file in your downloads folder
 # Adjust the file path if you'd like it to save somewhere else.
-write.xlsx(sc.dat, paste0("C:/Users/",my_name,"/Downloads/StreamCat_download_",Sys.Date(),".xlsx"))
+write.xlsx(sc.dat, paste0("C:/Users/",my_name,"/Downloads/",Sys.Date(),"StreamCat_download.xlsx"))
 
 
 ################################################################################
