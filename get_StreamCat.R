@@ -2,7 +2,7 @@
 ################################################################################
 # Direct watershed and catchment data download from EPA's StreamCat Dataset. 
 # 
-# Lily Conrad, IDEQ State Office
+# Lily Conrad
 # last update: 2/5/2025
 # 
 # Data citation: 
