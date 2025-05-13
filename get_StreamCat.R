@@ -18,6 +18,18 @@
 
 ### User inputs ----------------------------------------------------------------
 
+# Run these lines of code to load packages, libraries, and allowable values (might 
+# take a minute or so to run).
+
+my_packages <- c("dplyr", "openxlsx", "remotes")
+install.packages(my_packages, repos = "http://cran.rstudio.com")
+
+library(dplyr)
+library(openxlsx)
+library(remotes)
+install_github("USEPA/StreamCatTools", build_vignettes=FALSE) # most recent approved version
+library(StreamCatTools)
+
 # Identify your area of interest. See this link for descriptions of the options:
 # https://www.epa.gov/national-aquatic-resource-surveys/streamcat-dataset-readme#geospatial
 # If you want to enter multiple, separate them by commas, but include all entries
@@ -25,7 +37,7 @@
 aoi <- "catchment"
  
 # Run this line of code. 
-parameter_codes <- sc_get_params(param='name') %>% as.data.frame()
+parameter_codes <- sc_get_params(param='metric_names') %>% as.data.frame()
 
 # You should see an item appear with the name "parameter_codes" under your Global
 # Environment (top right window). Click on it to open it in a new tab. Then 
@@ -58,18 +70,6 @@ my_name <- "jdoe"
 ################################################################################
 #                                 START
 ################################################################################
-
-### Load packages and data -----------------------------------------------------
-
-my_packages <- c("dplyr", "openxlsx", "remotes")
-install.packages(my_packages, repos = "http://cran.rstudio.com")
-
-library(dplyr)
-library(openxlsx)
-library(remotes)
-install_github("USEPA/StreamCatTools", build_vignettes=FALSE) # most recent approved version
-library(StreamCatTools)
-
 
 ### Retrieve data --------------------------------------------------------------
 
